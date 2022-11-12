@@ -18,7 +18,7 @@ use App\Http\Controllers\DetailController;
 Route::get('/', function () {
     $pictures = \DB::table('pictures')->get(); 
 
-    return view('welcome', compact('pictures'));
+    return view('layout', compact('pictures'));
     // return view('welcome');
 });
 
