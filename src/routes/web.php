@@ -16,19 +16,12 @@ use App\Http\Controllers\DetailController;
 */
 
 Route::get('/', function () {
-    $pictures = \DB::table('pictures')->get(); 
+    $tolavel_itinerarys = \DB::table('tolavel_itinerarys')->get(); 
 
-    return view('layout', compact('pictures'));
-    // return view('welcome');
-});
+    return view('itinerary_list', compact('tolavel_itinerarys'));
+}) -> name('itinerary_list');
 
-// Route::post('/edit', function () {
-//     return view('edit');
-// });
+Route::get('itinerary_detail', [DetailController::class,'top']) -> name('itinerary_detail');
 
-Route::get('detail', [DetailController::class,'top']) -> name('detail');
-// Route::get('detail/{pictureID}', 'DetailController@index') -> name('detail');
-
-Route::post('/detail', [DetailController::class,'top']);
-
-Route::post('/edit', [EditController::class,'top']);
+Route::post('/itinerary_create', [EditController::class,'itineraryCreate']);
+Route::post('/itinerary_edit', [EditController::class,'itineraryEdit']);

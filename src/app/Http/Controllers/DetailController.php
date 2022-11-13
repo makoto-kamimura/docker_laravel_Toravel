@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Station;
-use App\Models\Picture;
 
 class DetailController extends Controller
 {
@@ -13,10 +11,13 @@ class DetailController extends Controller
     public function top (Request $request) 
     {
 
-        $picture = \DB::table('pictures')->where('ID', $request->ID)->first(); 
+        // 基本情報取得
+        $tolavel_itinerary = \DB::table('tolavel_itinerarys')->where('itinerary_no', $request->itinerary_no)->first(); 
 
-        // return view('detail');
-        return view('detail', compact('picture'));
+        // 詳細情報取得
+        $tolavel_itinerary_details = \DB::table('tolavel_itinerary_details')->where('itinerary_no', $request->itinerary_no)->get(); 
+
+        return view('itinerary_detail', compact('tolavel_itinerary','tolavel_itinerary_details'));
 
     }
 

@@ -1,0 +1,1 @@
+drop table tolavel_itinerary_categorys;
