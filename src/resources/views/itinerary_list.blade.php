@@ -5,7 +5,7 @@
   <ol style="list-style: none; padding-left: 0; display: flex; flex-wrap: wrap;">
   
     <li>
-      <form action="/itinerary_create" method="post" enctype="multipart/form-data">
+      <form action="/itinerary_create" name="itinerary_create" method="post" enctype="multipart/form-data">
         @csrf
         <div class="card bg-light text-white" style="width: 18rem; margin: 1rem;">
           {{-- <a href="{{ route('itinerary_detail', ['itinerary_no'=>$tolavel_itinerary->itinerary_no]) }}"> --}}
@@ -15,12 +15,16 @@
                   <input type="text" class="card-title form-control" name="itinerary_title" placeholder="しおりタイトル">
                 </div>
                 <div class="col-3">
-                  <button type="submit" class="btn-sm btn-primary">add</button>
+                  <a href="javascript:itinerary_create.submit()">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>
+                  </a>
                 </div>
               </div>
               {{-- <div class="card-text">{{$tolavel_itinerary->StartDate}} - {{$tolavel_itinerary->EndDate}}</div> --}}
               <input type="file" name="itinerary_picture" class="form-control" multiple onchange="previewImage(this);">
-              <img class="card-img" id="preview" src="storage/ishigaki.JPG" width="300" height="155">
+              <img class="card-img" id="preview" src="storage/ishigaki.JPG" width="300" height="150">
               <script>
                 function previewImage(obj)
                 {
@@ -40,7 +44,8 @@
     @foreach($tolavel_itinerarys as $tolavel_itinerary)
       <li>
         <div class="card bg-light text-white" style="width: 18rem; margin: 1rem;">
-          <a href="{{ route('itinerary_detail', ['itinerary_no'=>$tolavel_itinerary->itinerary_no]) }}">
+          {{-- view_flg: 0_detaillist 1_detailedit --}}
+          <a href="{{ route('itinerary_detail', ['itinerary_no'=>$tolavel_itinerary->itinerary_no,'view_flg'=>0]) }}">
             <div class="card-body">
               <h5 class="card-title">{{$tolavel_itinerary->itinerary_title}}</h5>
               {{-- <div class="card-text">{{$tolavel_itinerary->StartDate}} - {{$tolavel_itinerary->EndDate}}</div> --}}

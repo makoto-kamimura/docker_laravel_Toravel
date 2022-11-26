@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">旅の記録システム</a>
+        <a class="navbar-brand" href="/">Toravel（仮）</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="location.href={{route('itinerary_list')}}">
             <span class="navbar-toggler-icon"></span>
         </button>
