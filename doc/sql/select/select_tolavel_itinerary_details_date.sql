@@ -1,0 +1,2 @@
+select DATE_FORMAT(min(itinerary_detail_start_at), '%Y-%m-%d') from tolavel_itinerary_details where itinerary_no = 1;
+select DATE_FORMAT(max(itinerary_detail_start_at), '%Y-%m-%d') from tolavel_itinerary_details where itinerary_no = 1;

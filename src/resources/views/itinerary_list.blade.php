@@ -23,7 +23,7 @@
                 </div>
               </div>
               {{-- <div class="card-text">{{$tolavel_itinerary->StartDate}} - {{$tolavel_itinerary->EndDate}}</div> --}}
-              <input type="file" name="itinerary_picture" class="form-control" multiple onchange="previewImage(this);">
+              <input type="file" name="itinerary_picture" class="form-control form-margin-bottom" onchange="previewImage(this);">
               <img class="card-img" id="preview" src="storage/ishigaki.JPG" width="300" height="150">
               <script>
                 function previewImage(obj)

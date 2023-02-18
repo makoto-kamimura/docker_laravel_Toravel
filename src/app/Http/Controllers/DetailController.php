@@ -14,6 +14,13 @@ class DetailController extends Controller
         // しおり一覧取得
         $tolavel_itinerarys = \DB::table('tolavel_itinerarys')->get(); 
 
+        // $tolavel_itinerarys = \DB::table('tolavel_itinerarys')
+        //     ->leftJoin('tolavel_itinerary_details', 'tolavel_itinerarys.itinerary_no', '=', 'tolavel_itinerary_details.itinerary_no')
+        //     ->select('tolavel_itinerarys.itinerary_title','tolavel_itinerarys.itinerary_picture')
+        //     ->get(); 
+
+        // dd($tolavel_itinerarys);
+
         return view('itinerary_list', compact('tolavel_itinerarys'));
 
     }
