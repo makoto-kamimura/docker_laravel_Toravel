@@ -59,7 +59,8 @@ services:
         source: db-store
         target: /var/lib/mysql
         volume:
-          nocopy: true
+          # nocopy: true
+          ./infra/docker/mysql/initdb.d:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_DATABASE=${DB_DATABASE:-laravel}
       - MYSQL_USER=${DB_USERNAME:-phper}
