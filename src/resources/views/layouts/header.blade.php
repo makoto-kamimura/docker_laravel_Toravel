@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid" style="background-color: #e7e3d2;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e7e3d2;">
+    <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img id="rogo" src="storage/rogo.JPG">
         </a>
