@@ -55,12 +55,12 @@ services:
         protocol: tcp
         mode: host
     volumes:
-      - type: volume
-        source: db-store
-        target: /var/lib/mysql
-        volume:
-          # nocopy: true
-          ./infra/docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+     - ./infra/docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+      # - type: volume
+      #   source: db-store
+      #   target: /var/lib/mysql
+      #   volume:
+      #     nocopy: true
     environment:
       - MYSQL_DATABASE=${DB_DATABASE:-laravel}
       - MYSQL_USER=${DB_USERNAME:-phper}
