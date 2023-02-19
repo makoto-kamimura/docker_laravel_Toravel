@@ -1,7 +1,11 @@
 /node_modules
 /public/build
 /public/hot
+
+/public/*.bk
+
 #/public/storage
+
 /storage/*.key
 /vendor
 .env
